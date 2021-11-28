@@ -8,16 +8,16 @@
 }
 html {
   font-size: 24px;
-
   background-color: var(--light-grayish-cyan1);
 }
 * {
   font-family: "Space Mono", monospace;
 }
-main {
-  min-height: 100vh;
+body {
+  height: 100vh;
   display: grid;
   place-content: center;
+  margin: 0;
 }
 h1 {
   text-align: center;
@@ -26,9 +26,11 @@ h1 {
   font-size: 1.2rem;
   letter-spacing: 0.25rem;
   color: var(--very-dark-cyan);
+  margin-top: 0;
+  margin-bottom: 1.5rem;
 }
 .container {
-  width: 35rem;
+  width: 32rem;
   max-width: 90vw;
   border-radius: 0.8rem;
   padding: 1.5rem;
@@ -38,7 +40,7 @@ h1 {
   gap: 1.5rem;
   background-color: white;
 }
-.container > div {
+.action-group {
   width: calc(50% - 0.75rem);
 }
 .action-group p {
@@ -58,7 +60,7 @@ input[type="number"] {
 }
 .icon {
   position: absolute;
-  padding: calc(0.56rem + 2px) 0.5rem;
+  padding: calc(0.38rem + 2px) 0.5rem;
   height: 0.7rem;
   color: var(--dark-grayish-cyan2);
 }
@@ -68,14 +70,17 @@ input[type="number"] {
   outline: none;
   border: 2px solid transparent;
   background-color: var(--light-grayish-cyan2);
-  padding: 0.2rem 0.5rem;
-  font-size: 1rem;
+  padding: 0.3rem 0.5rem;
+  font-size: 0.95rem;
+  line-height: 1rem;
   color: var(--dark-grayish-cyan1);
   border-radius: 0.2rem;
   transition: all 0.3s ease;
+  cursor: pointer;
 }
 .action-group input:active,
 .action-group input:focus {
+  caret-color: var(--strong-cyan);
   border-color: var(--strong-cyan);
   font-weight: 700;
   color: var(--very-dark-cyan);
@@ -88,7 +93,7 @@ input[type="number"] {
 }
 .bill-group,
 .tip-percent-group {
-  margin-bottom: 1.5rem;
+  margin-bottom: 1.2rem;
 }
 .btn-group {
   display: flex;
@@ -97,15 +102,17 @@ input[type="number"] {
   gap: 0.5rem;
 }
 .btn-group .tip-btn {
+  text-align: center;
   background-color: var(--very-dark-cyan);
   color: white;
   padding: 0.2rem 0;
-  font-size: 1rem;
+  font-size: 0.95rem;
   outline: none;
   border: none;
   border-radius: 0.2rem;
   width: calc(33.33% - 0.34rem);
   transition: all 0.3s ease;
+  cursor: pointer;
 }
 .btn-group .tip-btn:hover,
 .btn-group .tip-btn:active,
@@ -117,8 +124,11 @@ input[type="number"] {
   width: calc(33.33% - 1.34rem - 4px);
   background-color: var(--light-grayish-cyan2);
   color: var(--dark-grayish-cyan1);
+  padding: 0 0.5rem;
+  line-height: 1rem;
+  font-size: 0.95rem;
 }
-.customer::placeholder {
+.custom::placeholder {
   text-align: center;
 }
 .people-num-group .text-group {
@@ -141,4 +151,54 @@ input[type="number"] {
 .display-group {
   border-radius: 0.5rem;
   background-color: var(--very-dark-cyan);
+  padding: 1.5rem;
+  width: calc(50% - 3.75rem);
+  position: relative;
+}
+.display-group .display {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+.display .main {
+  color: var(--light-grayish-cyan2);
+  font-size: 0.7rem;
+  margin: 0;
+}
+.display .sub {
+  color: var(--dark-grayish-cyan2);
+  font-size: 0.5rem;
+  margin: 0;
+}
+.display .amount {
+  margin: 0;
+  font-size: 1.7rem;
+  color: var(--strong-cyan);
+}
+.display-group button {
+  width: calc(100% - 3rem);
+  position: absolute;
+  bottom: 1.5rem;
+  padding: 0.3rem 0;
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  outline: none;
+  border: none;
+  border-radius: 0.2rem;
+  background-color: var(--strong-cyan);
+  color: var(--very-dark-cyan);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+button:disabled,
+button[disabled] {
+  background-color: hsl(183, 100%, 23%);
+  color: hsl(183, 100%, 19%);
+  cursor: not-allowed;
+}
+button:active,
+button:hover {
+  background-color: hsl(183, 81%, 79%);
 }

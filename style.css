@@ -14,10 +14,12 @@ html {
   font-family: "Space Mono", monospace;
 }
 body {
-  height: 100vh;
+  margin: 0;
+}
+main {
+  min-height: 100vh;
   display: grid;
   place-content: center;
-  margin: 0;
 }
 h1 {
   text-align: center;
@@ -31,7 +33,7 @@ h1 {
 }
 .container {
   width: 32rem;
-  max-width: 90vw;
+  max-width: calc(90vw - 3rem);
   border-radius: 0.8rem;
   padding: 1.5rem;
   margin-bottom: 1rem;
@@ -60,7 +62,7 @@ input[type="number"] {
 }
 .icon {
   position: absolute;
-  padding: calc(0.38rem + 2px) 0.5rem;
+  padding: calc(0.4rem + 2px) 0.5rem;
   height: 0.7rem;
   color: var(--dark-grayish-cyan2);
 }
@@ -78,8 +80,15 @@ input[type="number"] {
   transition: all 0.3s ease;
   cursor: pointer;
 }
+.action-group input:hover,
+#tip:hover {
+  background-color: hsl(180, 100%, 96%);
+}
 .action-group input:active,
-.action-group input:focus {
+.action-group input:focus,
+#tip:active,
+#tip:focus {
+  background-color: var(--light-grayish-cyan2);
   caret-color: var(--strong-cyan);
   border-color: var(--strong-cyan);
   font-weight: 700;
@@ -201,4 +210,38 @@ button[disabled] {
 button:active,
 button:hover {
   background-color: hsl(183, 81%, 79%);
+}
+@media only screen and (max-width: 770px) {
+  html {
+    font-size: 18px;
+  }
+  body {
+    display: grid;
+    place-content: center;
+  }
+  main {
+    width: 18rem;
+    max-width: 90vw;
+  }
+  .container {
+    width: calc(100% - 3rem);
+  }
+  .container > div {
+    width: 100%;
+  }
+  .btn-group .tip-btn {
+    width: calc(50% - 0.5rem);
+  }
+  #tip {
+    width: calc(50% - 1.5rem - 4px);
+  }
+  .display-group button {
+    position: unset;
+    width: 100%;
+  }
+}
+@media only screen and (min-width: 771px) and (max-width: 940px) {
+  html {
+    font-size: 20px;
+  }
 }

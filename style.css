@@ -125,7 +125,7 @@ input[type="number"] {
 }
 .btn-group .tip-btn:hover,
 .btn-group .tip-btn:active,
-.active {
+.btn-group .tip-btn.active {
   background-color: var(--strong-cyan);
   color: var(--very-dark-cyan);
 }

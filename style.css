@@ -41,11 +41,10 @@ h1 {
 .container > div {
   width: calc(50% - 0.75rem);
 }
-.action-group {
-}
 .action-group p {
   font-size: 0.65rem;
-  margin: 0;
+  margin: 0.3rem 0;
+  font-weight: 600;
   color: var(--dark-grayish-cyan1);
 }
 input::-webkit-outer-spin-button,
@@ -57,16 +56,35 @@ input::-webkit-inner-spin-button {
 input[type="number"] {
   -moz-appearance: textfield;
 }
+.icon {
+  position: absolute;
+  padding: calc(0.56rem + 2px) 0.5rem;
+  height: 0.7rem;
+  color: var(--dark-grayish-cyan2);
+}
 .action-group input {
   text-align: right;
-  width: calc(100% - 1rem);
+  width: calc(100% - 1rem - 4px);
   outline: none;
-  border: none;
+  border: 2px solid transparent;
   background-color: var(--light-grayish-cyan2);
   padding: 0.2rem 0.5rem;
   font-size: 1rem;
-  color: var(--dark-grayish-cyan2);
+  color: var(--dark-grayish-cyan1);
   border-radius: 0.2rem;
+  transition: all 0.3s ease;
+}
+.action-group input:active,
+.action-group input:focus {
+  border-color: var(--strong-cyan);
+  font-weight: 700;
+  color: var(--very-dark-cyan);
+}
+.action-group input::placeholder {
+  color: var(--dark-grayish-cyan1);
+}
+.action-group input:focus::placeholder {
+  color: transparent;
 }
 .bill-group,
 .tip-percent-group {
@@ -85,12 +103,40 @@ input[type="number"] {
   font-size: 1rem;
   outline: none;
   border: none;
-  border-radius: 0.1rem;
+  border-radius: 0.2rem;
   width: calc(33.33% - 0.34rem);
+  transition: all 0.3s ease;
 }
-.btn-group .tip-btn.custom {
+.btn-group .tip-btn:hover,
+.btn-group .tip-btn:active,
+.active {
+  background-color: var(--strong-cyan);
+  color: var(--very-dark-cyan);
+}
+#tip {
+  width: calc(33.33% - 1.34rem - 4px);
   background-color: var(--light-grayish-cyan2);
   color: var(--dark-grayish-cyan1);
+}
+.customer::placeholder {
+  text-align: center;
+}
+.people-num-group .text-group {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.people-num-group .error {
+  color: transparent;
+}
+.error-group input {
+  border-color: red;
+  font-weight: 700;
+  color: var(--very-dark-cyan);
+}
+.error-group .error {
+  text-align: right;
+  color: red;
 }
 .display-group {
   border-radius: 0.5rem;

@@ -30,15 +30,38 @@
     </style>
   </head>
   <body>
+    <main>
+      <div class="action-group">
+        <div class="bill-group">
+          <p>Bill</p>
+          <input type="number" name="bill" id="bill" value="0" />
+        </div>
+        <div class="tip-percent-group">
+          <p>Select Tip %</p>
+          <div class="btn-group">
+            <button class="tip-btn">5%</button>
+            <button class="tip-btn">10%</button>
+            <button class="tip-btn">15%</button>
+            <button class="tip-btn">25%</button>
+            <button class="tip-btn">50%</button>
+            <button class="tip-btn custom">Custom</button>
+          </div>
+        </div>
+        <div class="people-num-group">
+          <p>Number of People</p>
+          <input type="number" name="people" id="people-num" value="0" />
+        </div>
+      </div>
+    </main>
     Bill Select Tip % 5% 10% 15% 25% 50% Custom Number of People Tip Amount /
     person Total / person Reset
 
-    <div class="attribution">
+    <footer class="attribution">
       Challenge by
       <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
         >Frontend Mentor</a
       >. Coded by <a href="#">Your Name Here</a>.
-    </div>
+    </footer>
     <script src="./index.js"></script>
   </body>
 </html>

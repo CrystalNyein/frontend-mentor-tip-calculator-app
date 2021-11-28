@@ -35,24 +35,34 @@
       <div class="container">
         <div class="action-group">
           <div class="bill-group">
-            <p>Bill</p>
+            <div class="text-group">
+              <p>Number of People</p>
+              <p class="error">Can't be zero</p>
+            </div>
             <img class="icon" src="./images/icon-dollar.svg" alt="Dollar" />
-            <input type="number" name="bill" id="bill" placeholder="0" />
+            <input
+              type="number"
+              name="bill"
+              id="bill"
+              placeholder="0"
+              onkeyup="saveBill(event)"
+            />
           </div>
           <div class="tip-percent-group">
             <p>Select Tip %</p>
             <div class="btn-group">
-              <button class="tip-btn">5%</button>
-              <button class="tip-btn">10%</button>
-              <button class="tip-btn">15%</button>
-              <button class="tip-btn">25%</button>
-              <button class="tip-btn">50%</button>
+              <button class="tip-btn" onclick="calculateTip(event)">5%</button>
+              <button class="tip-btn" onclick="calculateTip(event)">10%</button>
+              <button class="tip-btn" onclick="calculateTip(event)">15%</button>
+              <button class="tip-btn" onclick="calculateTip(event)">25%</button>
+              <button class="tip-btn" onclick="calculateTip(event)">50%</button>
               <input
                 type="text"
                 name="tip"
                 id="tip"
                 placeholder="Custom"
                 class="custom"
+                onkeyup="calculateTip(event)"
               />
             </div>
           </div>
@@ -65,8 +75,9 @@
             <input
               type="number"
               name="people"
-              id="people-num"
+              id="people"
               placeholder="0"
+              onkeyup="savePeople(event)"
             />
           </div>
         </div>
@@ -85,7 +96,7 @@
             </div>
             <p id="total-amt" class="amount">$0.00</p>
           </div>
-          <button id="reset">Reset</button>
+          <button id="reset" onclick="reset(event)" disabled>Reset</button>
         </div>
       </div>
       <div class="attribution">

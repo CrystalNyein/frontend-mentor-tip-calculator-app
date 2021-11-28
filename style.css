@@ -140,13 +140,16 @@ input[type="number"] {
 .custom::placeholder {
   text-align: center;
 }
-.people-num-group .text-group {
+.people-num-group .text-group,
+.bill-group .text-group {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
 }
-.people-num-group .error {
-  color: transparent;
+.people-num-group .error,
+.bill-group .error {
+  z-index: -999;
+  transition: all 0.3s ease;
 }
 .error-group input {
   border-color: red;
@@ -154,6 +157,7 @@ input[type="number"] {
   color: var(--very-dark-cyan);
 }
 .error-group .error {
+  z-index: 1;
   text-align: right;
   color: red;
 }
@@ -202,7 +206,8 @@ input[type="number"] {
   transition: all 0.3s ease;
 }
 button:disabled,
-button[disabled] {
+button[disabled],
+button:disabled:hover {
   background-color: hsl(183, 100%, 23%);
   color: hsl(183, 100%, 19%);
   cursor: not-allowed;

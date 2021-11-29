@@ -15,10 +15,12 @@ const calcTipDetail = () => {
   totalAmt.innerHTML = "$" + (tipPerPerson * people).toFixed(2);
 };
 const checkBillError = () => {
-  if (people === 0) {
+  console.log(people);
+  if (people == 0) {
+    console.log("Here");
     peopleNumGroup.classList.add("error-group");
   }
-  if (bill === 0) {
+  if (bill == 0) {
     billGroup.classList.add("error-group");
   }
   if (people !== 0 && bill !== 0 && tip !== 0) {

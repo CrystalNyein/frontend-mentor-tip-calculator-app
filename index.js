@@ -10,9 +10,11 @@ const billInput = document.getElementById("bill");
 const peopleInput = document.getElementById("people");
 const tipInpput = document.getElementById("tip");
 const calcTipDetail = () => {
-  let tipPerPerson = ((bill * tip) / 100).toFixed(2);
-  tipAmt.innerHTML = "$" + tipPerPerson;
-  totalAmt.innerHTML = "$" + (tipPerPerson * people).toFixed(2);
+  let splitBill = bill / people;
+  let tipPerPerson = (splitBill * tip) / 100;
+  let totalPerPerson = splitBill + tipPerPerson;
+  tipAmt.innerHTML = "$" + tipPerPerson.toFixed(2);
+  totalAmt.innerHTML = "$" + totalPerPerson.toFixed(2);
 };
 const checkBillError = () => {
   console.log(people);
